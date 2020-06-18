@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Hoch's PWA</title>
+    <link rel="manifest" href="manifest.json"></manifest>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="script.js"></script>
+    <script src="share.js"></script>
+    <script src="badging.js"></script>
+</head>
+<body bgcolor="#E6E6FA">
+    <div><b>1. Custom Taskbar: (NoDrag Zone)</b>
+        <i class="material-icons">cloud</i>
+        <i class="material-icons">favorite</i>
+        <i class="material-icons">attachment</i>
+        &nbsp;&emsp;&emsp;PWA Tester&emsp;
+        <input id="search_box" type="text" placeholder="search value" style="width: 250px;">
+    </div>
+    <div>
+        <h3>2. Activation test</3>
+        <div class="activation_type" id="browser" >
+            <div>browser navigation</div>
+        </div>
+        <div class="activation_type" id="launch" >
+            <div>App Launch activation</div>
+        </div>
+        <div class="activation_type" id="share" >
+            <div>Share target activation</div>
+            <div id="shared_from"></div>
+
+        </div>
+        <div class="activation_type" id="file" >
+            <div>File handler activation</div>
+            <button id='file_save_click'>Try Save</button>
+            <div class="filetype" id="file_handler" contenteditable="true"></div>
+        </div>
+    </div>
+    <div>
+        <h3>3. Navigator.share test</h3>
+        <div>
+            <form id="shareTestForm">
+            <table>
+                <tbody><tr><td>Title:</td>
+                    <td><input type="checkbox" id="title_checkbox" checked="" disabled></td>
+                    <td><input id="title" value="Title" size="40"></td>
+                </tr>
+                <tr><td>Text:</td>
+                    <td><input type="checkbox" id="text_checkbox" checked=""></td>
+                    <td><input id="text" value="The shared text" size="40"></td>
+                </tr>
+                <tr><td>URL:</td>
+                    <td><input type="checkbox" id="url_checkbox" checked=""></td>
+                    <td><input id="url" value="https://www.contoso.com" size="40"></td>
+                </tr>
+                <tr><td>Files:</td>
+                    <td><!--Without column 2, the whole table is small on mobile.--></td>
+                    <td><input id="files" type="file" multiple=""></td>
+                </tr>
+              </tbody>
+            </table>
+            </form>
+            <p>
+                <input id="share" type="button" value="Share">
+                <input id="share-no-gesture" type="button" value="Share without user gesture">
+            </p>
+            <p>
+                <div id="output">log: </div>
+            </p>
+        </div>
+    </div>
+
+    <div>
+        <h3>4. Badge notification test</h3>
+        <p id='notSupported' class='hidden'>
+            <b>Not Supported</b>
+            This browser doesn't appear to support the badging API.
+        </p>
+        <p>
+            <b>Note:</b>
+            " In order for this demo to work, it must be an installed
+            Progressive Web App.
+            "
+        </p>
+        <label for="badgeVal" class="badge-button">Badge value</label>
+        <input type="number" id="badgeVal" class="badge-button" placeholder="number" min="0" value="13" >
+        <br>
+        <button id='butSet' type='button' class="badge-button"> Set </button>
+        <button id='butClear' type='button' class="badge-button"> Clear </button>
+        
+    </div>
+    <!-- <h2>Performance Test: Image Load</h2>
+    <div>
+        <button id="generate" onclick="generate()">Creat images</button>
+        <button id="unlinkSrcFromImage" onclick="unlinkSrcFromImage()">Set image with empty</button>
+        <button id="removeImagesLinks" onclick="removeImagesLinks()">Remove images element</button>
+        <button id="hideVisibility" onclick="hideVisibility()">Hide visibility</button>
+        <div id="container"></div>
+    </div> -->
+</body>
+
+</html>

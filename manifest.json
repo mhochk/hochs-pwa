@@ -1,0 +1,75 @@
+{
+  "name": "Hoch's PWA",
+  "short_name": "Hoch's PWA",
+  "description": "Test app for exercising PWA functionality",
+  "categories": ["utilities", "productivity"],
+  "start_url": "./?custom_param=start_url_value",
+  "theme_color": "#8E2C54",
+  "scope":".",
+  "background_color": "#2C488E",
+  "display": "minimal-ui",
+  "orientation": "portrait",
+  "icons": [
+    {
+        "src": "HochsPWA_44.png",
+        "sizes": "44x44",
+        "type": "image/png"
+    }, {
+      "src": "HochsPWA_150.png",
+        "sizes": "150X150",
+        "type": "image/png"
+    }
+  ],
+  "share_target": {
+    "action": "./?custom_param=share_target_value",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "title": "mapped_title",
+      "text": "mapped_text",
+      "url": "mapped_url",
+      "files": [
+        {
+          "name": "mapped_files",
+          "accept": ["image/jpeg"]
+        }
+      ]
+    }
+  },
+  "file_handlers": [
+    {
+      "action": "./?custom_param=csv_file_handler",
+      "accept": {
+        "text/csv": ".csv"
+      }
+    },
+    {
+      "action": "/?custom_param=jpeg_file_handler",
+      "accept": {
+        "image/jpeg": [ ".jpg", ".jpeg" ]
+      }
+    },
+    {
+      "action": "./?custom_param=graph_file_handler",
+      "accept": {
+        "application/vnd.grafr.graph": [ ".grafr", ".graf" ],
+        "application/vnd.alternative-graph-app.graph": ".graph"
+      }
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "browser",
+      "id": "Microsoft.MicrosoftEdge.Stable_8wekyb3d8bbwe"
+    },
+    {
+      "platform": "browser",
+      "id": "Microsoft.MicrosoftEdge.Canary_8wekyb3d8bbwe"
+    },
+    {
+      "platform": "play",
+      "id": "android-mhochk-app",
+      "url": "https://mhochk.github.io/hello-pwa"
+    }
+  ]
+}
